@@ -3,12 +3,14 @@
     * Modul 151
     * Projekt Filmtagebuch
     * Samis Moser
-    * Script: 'signup-script.php'
+    * File: 'signup-script.php'
 */
 
 
 // überprüfen ob der submit button geklickt wurde
 if(isset($_POST['signup-submit'])){
+
+    //SQL-Connection-Variable importieren
     require('./db-script.php');
 
     $username = $_POST['uid'];
@@ -72,6 +74,7 @@ if(isset($_POST['signup-submit'])){
                 
                 $sql = "INSERT INTO users (Username, Email, PWD) VALUES (?, ?, ?)";
                 $stmt = mysqli_stmt_init($connection);
+                // Überprüfen ob SQL Anfrage nicht funktioniert (error=sqlerror)
                 if(!mysqli_stmt_prepare($stmt,$sql)){
                     header("Location: ../signup.php?error=sqlerror");
                     exit();
@@ -102,4 +105,5 @@ if(isset($_POST['signup-submit'])){
 else{
     // Falls der Submit button nicht geklickt wurde => User zur Startseite zurückschicken
     header("Location: ../index.php");
+    exit();
 }

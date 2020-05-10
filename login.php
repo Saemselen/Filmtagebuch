@@ -1,3 +1,9 @@
+<!--
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * File: 'login.php'
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +16,10 @@
     <header>
         <?php
                 require("./nav.php");
+                if(isset($_SESSION["userID"])){
+                    header("Location: index.php");
+                    exit();
+                }
         ?>
     </header>
     <!--    Content der Seite (Login-Formular)    -->
@@ -17,7 +27,7 @@
         <h1>Login</h1>
         <!--    Formular für Login    -->
         <form action="./scripts/login-script.php" method="post">
-            <input type="text" name="uid" placeholder="Benutzername">
+            <input type="text" name="mailuid" placeholder="Benutzername / E-Mail">
             <input type="password" name="pwd" placeholder="Passwort">
             <button type="submit" name="login-submit">Anmelden</button>
         </form>
