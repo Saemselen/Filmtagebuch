@@ -13,18 +13,19 @@
         ?>
     </header>
     <!--    Content der Seite (Login-Formular)    -->
-    <div id="login">
+    <div>
+        <h1>Login</h1>
         <!--    Formular für Login    -->
         <form action="./scripts/login-script.php" method="post">
-            <input type="text" name="uid" placeholder="Username..">
-            <input type="password" name="pwd" placeholder="Password..">
-            <button type="submit" name="login-submit">Login</button>
+            <input type="text" name="uid" placeholder="Benutzername">
+            <input type="password" name="pwd" placeholder="Passwort">
+            <button type="submit" name="login-submit">Anmelden</button>
         </form>
         <!--    Link zur sign-up Seite    -->
         <p>Sie haben noch keinen Account? dann können Sie <a href="signup.php">hier</a> einen neuen Account erstellen!</p>
         <!--    Logout-Formular    -->
         <form action="scripts/logout-script.php">
-            <button type="submit" name="logout-submit">Logout</button>
+            <button type="submit" name="logout-submit">Abmelden</button>
         </form>
     </div>
 </body>

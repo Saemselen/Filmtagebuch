@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <li><a href="./meine_filme.php">Meine Filme</a></li>
+        <li><a href="./index.php">Meine Filme</a></li>
         <li><a href="./suche.php">Suche</a></li>
         <li><a href="./login.php">Login</a></li>
         <!-- Benutzername wird angezeigt falls angemeldet -->
