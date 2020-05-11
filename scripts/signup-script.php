@@ -48,7 +48,7 @@ if(isset($_POST['signup-submit'])){
     // ? existiert der Benutzername bereits in der DB (error=uidtaken)
     else{
         // SQL Statement vorbereiten (Für den Benutzernamen wird aus Sicherheitsgründen ein Placeholder verwendet (SQL-Injection-Protection))
-        $sql = "SELECT Username FROM users WHERE Username=?";
+        $sql = "SELECT username FROM users WHERE username=?";
         $stmt = mysqli_stmt_init($connection);
         // Überprüfen ob SQL Anfrage nicht funktioniert (error=sqlerror)
         if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -72,7 +72,7 @@ if(isset($_POST['signup-submit'])){
             }
             else{
                 
-                $sql = "INSERT INTO users (Username, Email, PWD) VALUES (?, ?, ?)";
+                $sql = "INSERT INTO users (username, email, pwd) VALUES (?, ?, ?)";
                 $stmt = mysqli_stmt_init($connection);
                 // Überprüfen ob SQL Anfrage nicht funktioniert (error=sqlerror)
                 if(!mysqli_stmt_prepare($stmt,$sql)){

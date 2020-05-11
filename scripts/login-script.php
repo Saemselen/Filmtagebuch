@@ -21,7 +21,7 @@ if(isset($_POST["login-submit"])){
         exit();
     }
     else{
-        $sql = "SELECT * FROM users WHERE Username = ? OR Email = ?";
+        $sql = "SELECT * FROM users WHERE username = ? OR email = ?";
         $stmt = mysqli_stmt_init($connection);
         // Überprüfen ob SQL Anfrage nicht funktioniert (error=sqlerror)
         if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -38,7 +38,7 @@ if(isset($_POST["login-submit"])){
                 // ja
 
                 // eingegebenes Passwort mit Passwort-hash aus der DB vergleichen
-                $pwdCheck = password_verify($password, $row["PWD"]);
+                $pwdCheck = password_verify($password, $row["pwd"]);
                 if(!$pwdCheck){
                     // Falsches Passwort (error=wrongpwd)
                     header("Location: ../login.php?error=wrongpwd");
@@ -49,7 +49,7 @@ if(isset($_POST["login-submit"])){
                     // session starten
                     session_start();
                     $_SESSION["userID"] = $row["UID"];
-                    $_SESSION["userName"] = $row["Username"];
+                    $_SESSION["userName"] = $row["username"];
 
                     header("Location: ../index.php?login=success");
                     exit();

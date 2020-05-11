@@ -3,7 +3,7 @@
 $DBServername = "localhost";
 $DBUsername = "root";
 $DBPwd = "";
-$DBName = "loginsystem";
+$DBName = "filmtagebuch";
 
 $connection = mysqli_connect($DBServername,$DBUsername,$DBPwd,$DBName);
 
