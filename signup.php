@@ -75,11 +75,9 @@
                 <button id=\"submit\" type=\"submit\" name=\"signup-submit\">Account erstellen</button>
             </form>";
         }
-        echo "<p>Sie haben schon einen Account? dann können Sie sich <a href=\"login.php\">hier</a> anmelden!</p>";
+        echo "<p>Du hast bereits einen Account? Dann kannst du dich <a href=\"login.php\">hier</a> anmelden!</p>";
         echo "</div>";
     ?>
-        
-        
     </div>
 </body>
 </html>

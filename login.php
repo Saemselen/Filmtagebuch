@@ -39,7 +39,7 @@
                 <button id="submit" type="submit" name="login-submit">Anmelden</button>
             </form>
             <!--    Link zur sign-up Seite    -->
-            <p>Sie haben noch keinen Account? dann können Sie <a href="signup.php">hier</a> einen neuen Account erstellen!</p>
+            <p>Du hast noch keinen Account? Dann kannst du <a href="signup.php">hier</a> einen neuen Account erstellen!</p>
         </div>
     </div>
 </body>

@@ -27,8 +27,8 @@
             }
             else{
                 // user nicht eingeloggt
-                echo "<h2>Hallo, sieht aus als wärst du nicht eingeloggt</h2>";
-                echo "<p id=\"p-link\">Klicke <a href=\"./login.php\">hier</a> um dich einzuloggen</p>";
+                echo "<h2>Huch, sieht aus als wärst du nicht angemeldet</h2>";
+                echo "<p id=\"p-link\">Klicke <a href=\"./login.php\">hier</a> um dich anzumelden</p>";
             }
             echo "</div>";
         ?>

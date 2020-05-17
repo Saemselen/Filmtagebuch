@@ -25,18 +25,16 @@
         echo "<div id=\"content\">";
         if(isset($_SESSION["userID"])){
             // user eingeloggt
-            // => tabelle mit Einträgen des Benutzers anzeigen
+            // => tabelle mit Einträgen des Benutzers anzeigen (Standardmässig nach "neueste zuerst" sortiert)
 
             // button um formular einzublenden
             echo "<button id=\"btn-show-form\" onclick=\"showForm()\">Eintrag hinzufügen</button>";
-
-            
-
+ 
             // formular zum hinzufügen von Einträgen 
             echo "<form id=\"newfilmform\" action=\"./scripts/new_film-script.php\" method=\"post\">";
             echo "<input type=\"text\" name=\"film_title\" placeholder=\"Filmtitel\">";
             echo "<p>Genre</p><select name=\"film_genre\">
-                  <option value=\"Sci-Fi\">Sci-Fy</option>
+                  <option value=\"Sci-Fi\">Sci-Fi</option>
                   <option value=\"Drama\">Drama</option>
                   <option value=\"Abenteuer\">Abenteuer</option>
                   <option value=\"Action\">Action</option>
@@ -53,7 +51,7 @@
 
             // ausgabe
             echo "<table>";
-            echo "<tr>";
+            echo "<tr id=\"tr01\">";
             echo "<th>Filmtitel</th>";
             echo "<th>Genre</th>";
             echo "<th>Gesehen</th>";
@@ -95,8 +93,8 @@
         }
         else{
             // user nicht eingeloggt
-            echo "<h2>Hallo, sieht aus als wärst du nicht eingeloggt</h2>";
-            echo "<p id=\"p-link\">Klicke <a href=\"./login.php\">hier</a> um dich einzuloggen</p>";
+            echo "<h2>Huch, sieht aus als wärst du nicht angemeldet</h2>";
+            echo "<p id=\"p-link\">Klicke <a href=\"./login.php\">hier</a> um dich anzumelden</p>";
         }
         echo "</div>";
     ?>

@@ -16,8 +16,10 @@
         <!-- Benutzername wird angezeigt falls angemeldet -->
         
             <?php
+                // errors & warnings verbergen
                 error_reporting(0);
                 ini_set('display_errors', 0);
+
                 if(isset($_SESSION["userID"])){
                     //user eingeloggt
                     echo "<script type=\"text/javascript\">document.getElementById(\"nav-login\").style.display = \"none\";</script>";
