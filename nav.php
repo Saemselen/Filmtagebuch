@@ -14,7 +14,7 @@
                 if(isset($_SESSION["userID"])){
                     //user eingeloggt
                     echo "<script type=\"text/javascript\">document.getElementById(\"nav-login\").style.display = \"none\";</script>";
-                    echo "<li><a href=\"./user.php\">" . $_SESSION["userName"] . "</a></li>";
+                    echo "<li id=\"nav-login\"><a href=\"./user.php\">" . $_SESSION["userName"] . "</a></li>";
                 }
                 else{
                     //user nicht eingeloggt

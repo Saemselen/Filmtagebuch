@@ -28,3 +28,12 @@ CREATE TABLE films(
 
 );
 
+/* 
+Erstellen einiger Test-Datensätze für Filme
+*/
+
+
+INSERT INTO filme (title,genre,seen,rating,user) VALUES ("Star Wars Episode III","Sci-Fi","2020-03-20",6,"testuser");
+INSERT INTO filme (title,genre,seen,rating,user) VALUES ("Pulp Fiction","Drama","2020-01-15",9,"testuser");
+
+

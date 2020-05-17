@@ -17,7 +17,7 @@ if(isset($_POST['new_film-submit'])){
 
     // ? Ist ein Input leer (error=emptyinputs)
     if(empty($filmtitle) || empty($genre) || empty($seen) || empty($rating)){
-        header("Location: ../index.php?error=emptyinputs&title=".$filmtitle."&genre=".$genre."&seen=".$seen."&rating".$rating);
+        header("Location: ../index.php?error=emptyinputs&title=".$filmtitle."&genre=".$genre."&seen=".$seen."&rating=".$rating);
         exit();
     }
     else{

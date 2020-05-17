@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Filme | Filmtagebuch</title>
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/index_style.css">
+    <link rel="stylesheet" href="./css/table_style.css">
 </head>
 <body>
     <header>
@@ -13,10 +15,6 @@
         ?>
     </header>
     <?php
-
-
-
-
         echo "<div id=\"content\">";
         if(isset($_SESSION["userID"])){
             // user eingeloggt
@@ -30,11 +28,20 @@
             // formular zum hinzufügen von Einträgen (leer)
             echo "<form id=\"newfilmform\" action=\"./scripts/new_film-script.php\" method=\"post\">";
             echo "<input type=\"text\" name=\"film_title\" placeholder=\"Filmtitel\">";
-            echo "<input type=\"text\" name=\"film_genre\" placeholder=\"Genre\">";
-            echo "<p>Gesehen<input type=\"date\" name=\"film_seen\"></p>";
-            echo "<p>Bewertung (1-10)<input type=\"number\" name=\"film_rating\" min=\"1\" max=\"10\"></p>";
+            echo "<p>Genre</p><select name=\"film_genre\">
+                  <option value=\"Sci-Fi\">Sci-Fy</option>
+                  <option value=\"Drama\">Drama</option>
+                  <option value=\"Abenteuer\">Abenteuer</option>
+                  <option value=\"Action\">Action</option>
+                  <option value=\"Dokumentation\">Dokumentation</option>
+                  <option value=\"Komödie\">Komödie</option>
+                  <option value=\"Fantasy\">Fantasy</option>
+                  <option value=\"Biografie\">Biografie</option>
+                  </select>";
+            echo "<p>Gesehen</p><input type=\"date\" name=\"film_seen\">";
+            echo "<p>Bewertung (1-10)</p><input type=\"number\" name=\"film_rating\" min=\"1\" max=\"10\">";
             echo "<input type=\"hidden\" value=\"".$_SESSION["userName"]."\" name=\"user\">";
-            echo "<button type=\"submit\" name=\"new_film-submit\">Hinzufügen</button>";
+            echo "<button id=\"film-submit\" type=\"submit\" name=\"new_film-submit\">Hinzufügen</button>";
             echo "</form>";
 
             // ausgabe
@@ -82,7 +89,7 @@
         else{
             // user nicht eingeloggt
             echo "<h2>Hallo, sieht aus als wärst du nicht eingeloggt</h2>";
-            echo "<p>Klicke <a href=\"./login.php\">hier</a> um dich einzuloggen</p>";
+            echo "<p id=\"p-link\">Klicke <a href=\"./login.php\">hier</a> um dich einzuloggen</p>";
         }
         echo "</div>";
     ?>

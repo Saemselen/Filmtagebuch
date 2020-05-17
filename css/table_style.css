@@ -1,0 +1,31 @@
+table{
+    border-collapse: collapse;
+    width: 50%;
+    background-color:#fff;
+    height: 100px;
+    margin-left:25%;
+    margin-right:25%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px lightgray;
+
+    text-align: left;
+}
+td{
+    color: gray;
+    font-weight: 300;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+th{
+    color:gray;
+    font-weight: 500;
+}
+th,td{
+    padding-left:2%;
+    line-height: 30px;
+}
+
+tr:hover{
+    background-color: #e6e6e6;
+    cursor:pointer;
+}

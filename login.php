@@ -10,6 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Filmtagebuch</title>
+    <link rel="stylesheet" href="./css/login_style.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <!--  Navigation   -->
@@ -23,20 +25,19 @@
         ?>
     </header>
     <!--    Content der Seite (Login-Formular)    -->
-    <div>
-        <h1>Login</h1>
-        <!--    Formular für Login    -->
-        <form action="./scripts/login-script.php" method="post">
-            <input type="text" name="mailuid" placeholder="Benutzername / E-Mail">
-            <input type="password" name="pwd" placeholder="Passwort">
-            <button type="submit" name="login-submit">Anmelden</button>
-        </form>
-        <!--    Link zur sign-up Seite    -->
-        <p>Sie haben noch keinen Account? dann können Sie <a href="signup.php">hier</a> einen neuen Account erstellen!</p>
-        <!--    Logout-Formular    -->
-        <form action="scripts/logout-script.php">
-            <button type="submit" name="logout-submit">Abmelden</button>
-        </form>
+    <div id="content">
+        <div id="login">
+            
+            <!--    Formular für Login    -->
+            <form action="./scripts/login-script.php" method="post">
+                <h1>Login</h1>    
+                <input type="text" name="mailuid" placeholder="Benutzername / E-Mail">
+                <input type="password" name="pwd" placeholder="Passwort">
+                <button id="submit" type="submit" name="login-submit">Anmelden</button>
+            </form>
+            <!--    Link zur sign-up Seite    -->
+            <p>Sie haben noch keinen Account? dann können Sie <a href="signup.php">hier</a> einen neuen Account erstellen!</p>
+        </div>
     </div>
 </body>
 </html>
