@@ -32,7 +32,7 @@
 
             
 
-            // formular zum hinzufügen von Einträgen (leer)
+            // formular zum hinzufügen von Einträgen 
             echo "<form id=\"newfilmform\" action=\"./scripts/new_film-script.php\" method=\"post\">";
             echo "<input type=\"text\" name=\"film_title\" placeholder=\"Filmtitel\">";
             echo "<p>Genre</p><select name=\"film_genre\">
@@ -57,7 +57,7 @@
             echo "<th>Filmtitel</th>";
             echo "<th>Genre</th>";
             echo "<th>Gesehen</th>";
-            echo "<th>Bewertung (1-10)</th>";
+            echo "<th>Bewertung</th>";
             echo "</tr>";
 
             require("./scripts/db-script.php");
