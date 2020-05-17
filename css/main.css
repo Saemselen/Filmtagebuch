@@ -22,14 +22,15 @@ header ul{
 header li{
     width: 100px;
     display: inline-block;
-    margin-left:20px;
-    margin-right:20px;
+    margin-left: 5%;
+    margin-right:5%;
 }
 header a{
     text-align: center;
     transition: 0.1s;
     font-weight:500;
     padding-bottom: 5%;
+    
 }
 header a:hover{
     border-bottom: 3px solid gray;
@@ -76,4 +77,10 @@ h2,#p-link{
 }
 #nav-login a:hover{
     border-bottom: 3px solid rgb(235, 123, 123);
+}
+#errormessage{
+    font-family: consolas;
+    padding-top: 5%;
+    margin-bottom:-5%;
+    color:rgb(235, 123, 123);
 }

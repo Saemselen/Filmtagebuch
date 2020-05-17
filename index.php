@@ -62,7 +62,7 @@
 
             require("./scripts/db-script.php");
 
-            $sql = "SELECT title,genre,seen,rating FROM films WHERE user=?";
+            $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY seen DESC";
             $stmt = mysqli_stmt_init($connection);
 
 

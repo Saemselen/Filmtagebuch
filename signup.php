@@ -25,6 +25,7 @@
     
     <?php
         echo "<div id=\"signup\">";
+        require("./scripts/error_handler.php");
         if(isset($_GET['uid']) && isset($_GET['mail'])){
             //Mail und uid als get-variable vorhanden => mail und uid als values einfügen
             echo "

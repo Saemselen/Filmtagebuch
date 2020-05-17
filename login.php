@@ -28,7 +28,9 @@
     <!--    Content der Seite (Login-Formular)    -->
     <div id="content">
         <div id="login">
-            
+            <?php
+                require("./scripts/error_handler.php");
+            ?>
             <!--    Formular für Login    -->
             <form action="./scripts/login-script.php" method="post">
                 <h1>Login</h1>    
