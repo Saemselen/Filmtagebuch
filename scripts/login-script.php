@@ -3,8 +3,10 @@
     * Modul 151
     * Projekt Filmtagebuch
     * Samis Moser
-    * File: 'login-script.php'
+    * Path: './scripts/login-script.php'
+    * Beschreibung: Script zur Authentifizierung des Benutzers beim Login
 */
+
 
 // überprüfen ob der login button geklickt wurde
 if(isset($_POST["login-submit"])){

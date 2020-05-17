@@ -1,4 +1,10 @@
-
+/*
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './js/index_script.js'
+    * Beschreibung: Frontend-Script um das Formular auf der index.php Seite ein- und auszublenden
+*/ 
 function showForm(){
     // wenn knopf gedrückt wird und formular angezeigt wird => verstcken
     if(document.getElementById("newfilmform").style.display == "block"){

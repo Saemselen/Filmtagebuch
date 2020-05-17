@@ -2,7 +2,8 @@
     * Modul 151
     * Projekt Filmtagebuch
     * Samis Moser
-    * File: 'login.php'
+    * Path: './login.php'
+    * Beschreibung: Login-Seite
 -->
 <!DOCTYPE html>
 <html lang="en">

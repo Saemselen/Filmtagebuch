@@ -1,4 +1,11 @@
 <?php
+/* 
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './scripts/new_film.php'
+    * Beschreibung: Script um einen neuen Eintrag (Film) in die Datenbank hinzuzufügen
+*/
 if(isset($_POST['new_film-submit'])){
 
     //SQL-Connection-Variable importieren

@@ -3,8 +3,10 @@
     * Modul 151
     * Projekt Filmtagebuch
     * Samis Moser
-    * File: 'logout-script.php'
+    * Path: './scripts/logout-script.php'
+    * Beschreibung: Script für das Löschen der SESSION Variabeln beim Logout-Prozess
 */
+
 if(isset($_POST['logout-submit'])){
     // Session starten, session variabeln löschen 
     session_start();

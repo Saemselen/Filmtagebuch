@@ -1,3 +1,10 @@
+<!--
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './user.php'
+    * Beschreibung: Benutzerprofil-Seite (Zum Abmelden)
+-->
 <?php
     // Errors ausschalten, da hier normalerweise ein Error wegen doppelter Session initialisierung kommt
     error_reporting(0);

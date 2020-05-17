@@ -1,6 +1,10 @@
 
 CREATE DATABASE Filmtagebuch;
 
+CREATE USER 'FilmtagebuchUser'@'localhost' IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON Filmtagebuch.* TO 'FilmtagebuchUser'@'localhost';
+
+
 USE Filmtagebuch;
 
 CREATE TABLE users(

@@ -3,7 +3,8 @@
     * Modul 151
     * Projekt Filmtagebuch
     * Samis Moser
-    * File: 'signup-script.php'
+    * Path: './scripts/signup-script.php'
+    * Beschreibung: Script zum eintragen eines neuen Benutzers in der Datenbank im Signup-Prozess
 */
 
 

@@ -1,6 +1,11 @@
 <?php
-/*
-    Link zu ../index.php so kann auf den scripts ordner nicht zugegriffen werden 
+/* 
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './scripts/index.php'
+    * Beschreibung: Script um unbefugte Zugriffe auf den ./scripts Ordner zu vermeiden
 */
+
 header("Location: ../index.php");
 exit();

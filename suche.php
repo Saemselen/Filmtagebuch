@@ -1,3 +1,10 @@
+<!--
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './suche.php'
+    * Beschreibung: Suche-Seite
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>

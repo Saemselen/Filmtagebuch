@@ -1,3 +1,10 @@
+<!--
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './signup.php'
+    * Beschreibung: Signup-Seite
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>

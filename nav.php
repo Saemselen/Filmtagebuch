@@ -1,3 +1,10 @@
+<!--
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './nav.php'
+    * Beschreibung: Navigation (auf jeder Seite mittels der 'require()' funktion im <header> tag verlinkt)
+-->
 <?php 
     session_start();
 ?>
