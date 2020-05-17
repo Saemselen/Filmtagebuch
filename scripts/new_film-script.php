@@ -33,7 +33,7 @@ if(isset($_POST['new_film-submit'])){
             mysqli_stmt_bind_param($stmt, "sssss", $filmtitle, $genre, $seen, $rating, $user);
             mysqli_stmt_execute($stmt);
 
-            header("Location: ../index.php?addfilm=success&title=".$filmtitle."&genre=".$genre."&seen=".$seen."&rating=".$rating."&user=".$user);
+            header("Location: ../index.php?addfilm=success");
         }
     }
     // SQL-Verbidung beenden

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Filme | Filmtagebuch</title>
+    <link rel="stylesheet" href="./css/index_style.css">
 </head>
 <body>
     <header>
@@ -12,10 +13,6 @@
         ?>
     </header>
     <?php
-
-        function getFilms($username){
-            
-        }
 
 
 
@@ -49,7 +46,35 @@
             echo "<th>Bewertung (1-10)</th>";
             echo "</tr>";
 
-            $result = getFilms($_SESSION["userName"]);
+            require("./scripts/db-script.php");
+
+            $sql = "SELECT title,genre,seen,rating FROM films WHERE user=?";
+            $stmt = mysqli_stmt_init($connection);
+
+
+            // Überprüfen ob SQL Anfrage nicht funktioniert (error=sqlerror)
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+                header("Location: ./index.php?error=sqlerror");
+                exit();
+            }
+            else{
+                mysqli_stmt_bind_param($stmt,"s",$_SESSION["userName"]);
+                mysqli_stmt_execute($stmt);
+
+                $res = mysqli_stmt_get_result($stmt);
+                // durch array loopen
+                while($row = mysqli_fetch_assoc($res)){
+                    echo "<tr>";
+                    echo "<td>".$row["title"]."</td>";
+                    echo "<td>".$row["genre"]."</td>";
+                    echo "<td>".$row["seen"]."</td>";
+                    echo "<td>".$row["rating"]."</td>";
+                    echo "</tr>";   
+                }
+            }
+
+            
+            
 
             echo "</table>";
 
