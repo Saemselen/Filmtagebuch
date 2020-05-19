@@ -25,6 +25,7 @@ td{
     border-top: 1px solid lightgray;
 }
 th{
+    background-color:rgb(235, 235, 235);
     color:gray;
     font-weight: 500;
 }
@@ -40,4 +41,46 @@ th,td{
 tr:hover{
     background-color: #e6e6e6;
     cursor:pointer;
+}
+th button{
+    color:gray;
+    font-weight: 700;
+    float:right;
+    background-color:rgb(235, 235, 235);
+    border:1px solid rgb(235, 235, 235);
+    padding: 1%;
+    height: 30px;
+}
+th button:hover{
+    border:1px solid rgb(235, 123, 123);
+    background-color:#eeeeee;
+    color:rgb(235, 123, 123);
+    cursor: pointer;
+}
+th:hover,td:hover,tr:hover{
+    cursor:default;
+}
+
+td button{
+    
+    color:gray;
+    font-weight: 700;
+    float:right;
+    background-color:white;
+    border:1px solid white;
+    padding: 1%;
+    height: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+td button:hover{
+    border:1px solid rgb(235, 123, 123);
+    background-color:#eeeeee;
+    color:rgb(235, 123, 123);
+    cursor: pointer;
+}
+#th-del{
+    color:rgb(235, 123, 123);
+    text-align:right;
+    padding-right: 1%;
 }

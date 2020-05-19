@@ -50,17 +50,63 @@
             echo "</form>";
 
             // ausgabe
+            
             echo "<table>";
+            echo "<form method=\"post\">";
             echo "<tr id=\"tr01\">";
-            echo "<th>Filmtitel</th>";
-            echo "<th>Genre</th>";
-            echo "<th>Gesehen</th>";
-            echo "<th>Bewertung</th>";
+            echo "<th>Filmtitel 
+            <button id=\"sort-up-title\" type=\"submit\" name=\"sort_up_title\">▲</button>
+            <button id=\"sort-down-title\" type=\"submit\" name=\"sort_down_title\">▼</button>
+            </th>";
+            echo "<th>Genre 
+            <button id=\"sort-up-genre\" type=\"submit\" name=\"sort_up_genre\">▲</button>
+            <button id=\"sort-down-genre\" type=\"submit\" name=\"sort_down_genre\">▼</button>
+            </th>";
+            echo "<th>Gesehen 
+            <button id=\"sort-up-seen\" type=\"submit\" name=\"sort_up_seen\">▲</button>
+            <button id=\"sort-down-seen\" type=\"submit\" name=\"sort_down_seen\">▼</button>
+            </th>";
+            echo "<th>Bewertung 
+            <button id=\"sort-up-rating\" type=\"submit\" name=\"sort_up_rating\">▲</button>
+            <button id=\"sort-down-rating\" type=\"submit\" name=\"sort_down_rating\">▼</button>
+            </th>";
+            echo "<th id=\"th-del\">Löschen</th>";
+            echo "</form>";
             echo "</tr>";
 
             require("./scripts/db-script.php");
 
-            $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY seen DESC";
+
+            //sortieren der ausgabe
+            if(isset($_POST["sort_up_title"])){
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY title DESC";
+            }
+            else if(isset($_POST["sort_down_title"])){
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY title ASC";
+            }
+            else if(isset($_POST["sort_up_genre"])){
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY genre DESC";
+            }
+            else if(isset($_POST["sort_down_genre"])){
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY genre ASC";
+            }
+            else if(isset($_POST["sort_up_seen"])){
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY seen ASC";
+            }
+            else if(isset($_POST["sort_down_seen"])){
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY seen DESC";
+            }
+            else if(isset($_POST["sort_up_rating"])){
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY rating ASC";
+            }
+            else if(isset($_POST["sort_down_rating"])){
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY rating DESC";
+            }
+            else{
+                $sql = "SELECT title,genre,seen,rating FROM films WHERE user=?";
+            }
+
+            
             $stmt = mysqli_stmt_init($connection);
 
 
@@ -74,22 +120,25 @@
                 mysqli_stmt_execute($stmt);
 
                 $res = mysqli_stmt_get_result($stmt);
-                // durch array loopen
+                // durch sql array loopen
+                
                 while($row = mysqli_fetch_assoc($res)){
                     echo "<tr>";
+                    echo "<form method=\"post\" action=\"./scripts/remove_entry-script.php?e_title=".$row["title"]."\">";
                     echo "<td>".$row["title"]."</td>";
                     echo "<td>".$row["genre"]."</td>";
                     echo "<td>".$row["seen"]."</td>";
                     echo "<td>".$row["rating"]."</td>";
+                    echo "<td><button name=\"remove-entry-submit\" type=\"submit\">⛔</button></td></form>";
                     echo "</tr>";   
+
                 }
             }
-
-            
-            
-
             echo "</table>";
 
+            // SQL-Verbidung beenden
+            mysqli_stmt_close($stmt);
+            mysqli_close($connection);
         }
         else{
             // user nicht eingeloggt

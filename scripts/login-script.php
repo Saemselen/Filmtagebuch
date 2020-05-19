@@ -19,7 +19,7 @@ if(isset($_POST["login-submit"])){
 
     // ? Ist ein Input leer (error=emptyinputs)
     if(empty($mailuid) || empty($password)){
-        header("Location: ../login.php?error=emptyfields");
+        header("Location: ../login.php?error=emptyinputs");
         exit();
     }
     else{
@@ -68,6 +68,9 @@ if(isset($_POST["login-submit"])){
                 exit();
             }
         }
+        // SQL-Verbidung beenden
+        mysqli_stmt_close($stmt);
+        mysqli_close($connection);
     }
 }
 else{
