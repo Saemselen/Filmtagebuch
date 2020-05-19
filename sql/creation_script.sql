@@ -23,7 +23,6 @@ CREATE TABLE users(
 /* Erstellen eines Testbenutzers 'testuser' mit der email 'testuser@mail.com' und dem passwort '123456' (BCRYPT-hashwert, da dies normalerweise im PHP-script passiert) */
 INSERT INTO users (username, email, pwd) VALUES ("testuser", "testuser@mail.com", "$2y$10$mODirsrEkwDa2nYXEnyKB.BG8k.vS1HKuoSKDvWu9ciB7DQ2IkF0y");
 
-
 CREATE TABLE films(
 	FID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 	title TINYTEXT NOT NULL,
@@ -37,5 +36,3 @@ CREATE TABLE films(
 
 INSERT INTO filme (title,genre,seen,rating,user) VALUES ("Star Wars Episode III","Sci-Fi","2020-03-20",6,"testuser");
 INSERT INTO filme (title,genre,seen,rating,user) VALUES ("Pulp Fiction","Drama","2020-01-15",9,"testuser");
-
-
