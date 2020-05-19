@@ -73,14 +73,20 @@ td button{
     padding-right: 15px;
     padding-left: 15px;
 }
-td button:hover{
-    border:1px solid rgb(235, 123, 123);
-    background-color:#eeeeee;
-    color:rgb(235, 123, 123);
-    cursor: pointer;
-}
+
 #th-del{
     color:rgb(235, 123, 123);
     text-align:right;
     padding-right: 1%;
+}
+
+tr:hover > td button{
+    background-color:#e6e6e6;
+    border: 1px solid #e6e6e6;
+}
+
+td button:hover{
+    border:1px solid rgb(235, 123, 123);
+    color:rgb(235, 123, 123);
+    cursor: pointer;
 }

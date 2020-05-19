@@ -38,7 +38,7 @@
                     else{
                         // ausgabe
             
-                        echo "<table>";
+                        echo "<table id=\"results-table\">";
                         echo "<tr id=\"tr01\">";
                         echo "<th>Filmtitel</th>";
                         echo "<th>Genre</th>";
@@ -50,7 +50,7 @@
 
                         $searchstring = "%".$_POST["search-title"]."%";
                         
-                        $sql = "SELECT title,genre,seen,rating FROM films WHERE title LIKE ? OR genre like ? OR seen like ? OR rating LIKE ?";
+                        $sql = "SELECT fid,title,genre,seen,rating FROM films WHERE title LIKE ? OR genre like ? OR seen like ? OR rating LIKE ?";
                         $stmt = mysqli_stmt_init($connection);
 
                         if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -62,17 +62,23 @@
                             mysqli_stmt_execute($stmt);
 
                             $res = mysqli_stmt_get_result($stmt);
-
+                            
                             while($row = mysqli_fetch_assoc($res)){
                                 echo "<tr>";
                                 echo "<td>".$row["title"]."</td>";
                                 echo "<td>".$row["genre"]."</td>";
                                 echo "<td>".$row["seen"]."</td>";
                                 echo "<td>".$row["rating"]."</td>";
+                                echo "<td display=\"none\" class=\"entry\"></td>";
                                 echo "</tr>";   
                             }
                         }
                         echo "</table>";
+                        
+                        echo "<div id=\"noresults-label\">";
+                        echo "<p>Huch, sieht aus als würde deine Suche keine Resultate zurückliefern, versuche etwas anderes zu suchen!</p>";
+                        echo "</div>";
+
                         // SQL-Verbidung beenden
                         mysqli_stmt_close($stmt);
                         mysqli_close($connection);
@@ -87,5 +93,6 @@
             }
             echo "</div>";
         ?>
+        <script src="./js/suche_script.js"></script>
 </body>
 </html>

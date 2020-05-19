@@ -40,3 +40,15 @@ form{
     border: 1px solid lightgray;
     box-shadow: 4px 4px 6px lightgray;
 }
+#noresults-label {
+    width: 50%;
+    margin-left:25%;
+    margin-right:25%;
+    text-align: center;
+}
+
+#noresults-label p{
+    color:gray;
+    display: inline-block;
+    font-size: 20px;
+}

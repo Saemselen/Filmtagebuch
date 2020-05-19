@@ -51,7 +51,7 @@
 
             // ausgabe
             
-            echo "<table>";
+            echo "<table id=\"results-table\">";
             echo "<form method=\"post\">";
             echo "<tr id=\"tr01\">";
             echo "<th>Filmtitel 
@@ -130,11 +130,17 @@
                     echo "<td>".$row["seen"]."</td>";
                     echo "<td>".$row["rating"]."</td>";
                     echo "<td><button name=\"remove-entry-submit\" type=\"submit\">⛔</button></td></form>";
+                    echo "<td display=\"none\" class=\"entry\"></td>";
                     echo "</tr>";   
 
                 }
             }
             echo "</table>";
+
+            echo "<div id=\"noresults-label\">";
+            echo "<p>Huch, sieht aus als hättest du noch keine Filme eingetragen.</p>";
+            echo "</div>";
+
 
             // SQL-Verbidung beenden
             mysqli_stmt_close($stmt);
