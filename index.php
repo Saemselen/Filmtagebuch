@@ -42,6 +42,7 @@
                   <option value=\"Komödie\">Komödie</option>
                   <option value=\"Fantasy\">Fantasy</option>
                   <option value=\"Biografie\">Biografie</option>
+                  <option value=\"Krimi\">Krimi</option>
                   </select>";
             echo "<p>Gesehen</p><input type=\"date\" name=\"film_seen\">";
             echo "<p>Bewertung (1-10)</p><input type=\"number\" name=\"film_rating\" min=\"1\" max=\"10\">";
