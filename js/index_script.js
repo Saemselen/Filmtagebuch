@@ -3,7 +3,7 @@
     * Projekt Filmtagebuch
     * Samis Moser
     * Path: './js/index_script.js'
-    * Beschreibung: Frontend-Script um das Formular auf der index.php Seite ein- und auszublenden
+    * Beschreibung: Frontend-Script um das Formular auf der index.php Seite ein- und auszublenden + #noresults-label div ein und ausblenden
 */ 
 function showForm(){
     // wenn knopf gedrückt wird und formular angezeigt wird => verstcken
@@ -20,6 +20,7 @@ function showForm(){
 
 // beim laden der Seite => formular verstecken
 window.onload = function(){
+    this.console.log("script loaded");
     document.getElementById("newfilmform").style.display = "none";
     var entries = document.getElementsByClassName("entry");
     if(entries.length > 0){

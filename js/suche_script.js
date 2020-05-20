@@ -1,3 +1,10 @@
+/*
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './js/suche_script.js'
+    * Beschreibung: Frontend-Script das #noresults-label auf der suchen.php seite div ein und auszublenden
+*/ 
 window.onload = function(){
     var entries = document.getElementsByClassName("entry");
     if(entries.length > 0){

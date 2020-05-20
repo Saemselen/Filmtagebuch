@@ -1,4 +1,11 @@
 <?php
+/* 
+    * Modul 151
+    * Projekt Filmtagebuch
+    * Samis Moser
+    * Path: './scripts/remove_entry-script.php'
+    * Beschreibung: Script zum Entfernen von Einträgen aus der Datenbank
+*/
 if(isset($_POST["remove-entry-submit"]) && isset($_GET["e_title"])){
     $title = $_GET["e_title"];
     

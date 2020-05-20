@@ -84,3 +84,6 @@ h2,#p-link{
     margin-bottom:-5%;
     color:rgb(235, 123, 123);
 }
+button:hover{
+    cursor: pointer;
+}

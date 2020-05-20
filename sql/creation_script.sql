@@ -5,9 +5,10 @@
     * Path: './sql/creation_script.sql'
     * Beschreibung: SQL-Script zur Herstellung der DB 'Filmtagebuch' mit dem Benutzer 'FilmtagebuchUser' und den zugehörigen Tabellen und Test-Datensätzen
 */
-
+DROP DATABASE IF EXISTS Filmtagebuch;
 CREATE DATABASE Filmtagebuch;
 
+DROP USER IF EXISTS "FilmtagebuchUser"@"localhost";
 CREATE USER 'FilmtagebuchUser'@'localhost' IDENTIFIED BY '123456';
 GRANT ALL PRIVILEGES ON Filmtagebuch.* TO 'FilmtagebuchUser'@'localhost';
 
@@ -52,5 +53,13 @@ INSERT INTO films (title,genre,seen,rating,user) VALUES ("Kill Bill Volume II","
 INSERT INTO films (title,genre,seen,rating,user) VALUES ("Baby Driver","Action","2020-03-29",8,"testuser");
 INSERT INTO films (title,genre,seen,rating,user) VALUES ("Mac and devin go to high school","Komödie","2020-04-20",6,"testuser");
 INSERT INTO films (title,genre,seen,rating,user) VALUES ("Star Trek II: Der Zorn des Khan","Sci-Fi","2020-04-28",7,"testuser");
+INSERT INTO films (title,genre,seen,rating,user) VALUES ("Avengers: Infinity war","Action","2020-04-30",6,"testuser");
+INSERT INTO films (title,genre,seen,rating,user) VALUES ("Avengers: Endgame","Action","2020-05-01",8,"testuser");
+INSERT INTO films (title,genre,seen,rating,user) VALUES ("The Irishman","Drama","2020-05-05",9,"testuser");
+INSERT INTO films (title,genre,seen,rating,user) VALUES ("1917","Action","2020-05-12",8,"testuser");
+INSERT INTO films (title,genre,seen,rating,user) VALUES ("Solo: A Star Wars story","Sci-Fi","2020-05-15",4,"testuser");
+INSERT INTO films (title,genre,seen,rating,user) VALUES ("Get Out","Horror","2020-05-20",9,"testuser");
+
+
 
 

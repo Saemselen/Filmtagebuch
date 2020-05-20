@@ -3,7 +3,7 @@
     * Modul 151
     * Projekt Filmtagebuch
     * Samis Moser
-    * Path: 'db-script.php'
+    * Path: './scripts/db-script.php'
     * Beschreibung: Script zur Herstellung einer MySQL Datenbankverbindung
 */
 
