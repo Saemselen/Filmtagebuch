@@ -150,12 +150,14 @@
                     echo "</tr>";   
 
                 }
-            }
-            echo "</table>";
+                echo "</table>";
 
-            echo "<div id=\"noresults-label\">";
-            echo "<p>Huch, sieht aus als hättest du noch keine Filme eingetragen.</p>";
-            echo "</div>";
+
+                // !!! Hie wird eifach nüt meh glade
+                echo "<div id=\"noresults-label\">";
+                echo "<p>Huch, sieht aus als hättest du noch keine Filme eingetragen.</p>";
+                echo "</div>";
+            }
 
 
             // SQL-Verbidung beenden
