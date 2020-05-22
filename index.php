@@ -43,7 +43,6 @@
                   <option value=\"Fantasy\">Fantasy</option>
                   <option value=\"Biografie\">Biografie</option>
                   <option value=\"Krimi\">Krimi</option>
-                  <option value=\"Horror\">Horror</option>
                   </select>";
             echo "<p>Gesehen</p><input type=\"date\" name=\"film_seen\">";
             echo "<p>Bewertung (1-10)</p><input type=\"number\" name=\"film_rating\" min=\"1\" max=\"10\">";
@@ -81,50 +80,38 @@
 
             //sortieren der ausgabe
             if(isset($_POST["sort_up_title"])){
-                $sortparam = "up_title";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY title DESC";
             }
             else if(isset($_POST["sort_down_title"])){
-                $sortparam = "down_title";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY title ASC";
             }
             else if(isset($_POST["sort_up_genre"])){
-                $sortparam = "up_genre";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY genre DESC";
             }
             else if(isset($_POST["sort_down_genre"])){
-                $sortparam = "down_genre";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY genre ASC";
             }
             else if(isset($_POST["sort_up_seen"])){
-                $sortparam = "up_seen";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY seen ASC";
             }
             else if(isset($_POST["sort_down_seen"])){
-                $sortparam = "down_seen";
+                $active = "down_seen";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY seen DESC";
             }
             else if(isset($_POST["sort_up_rating"])){
-                $sortparam = "up_rating";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY rating ASC";
             }
             else if(isset($_POST["sort_down_rating"])){
-                $sortparam = "down_rating";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=? ORDER BY rating DESC";
             }
             else{
-                $sortparam = "default";
                 $sql = "SELECT title,genre,seen,rating FROM films WHERE user=?";
             }
 
-            require("./scripts/sql_connection.php");
+
+            
             $stmt = mysqli_stmt_init($connection);
 
-            if(isset($sortparam) && $sortparam != "default"){
-                echo "<script>";
-                echo "document.getElementById(\"$sortparam\").style.color = \"rgb(235, 123, 123)\";";
-                echo "</script>";
-            }
 
             // Überprüfen ob SQL Anfrage nicht funktioniert (error=sqlerror)
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -150,14 +137,12 @@
                     echo "</tr>";   
 
                 }
-                echo "</table>";
-
-
-                // !!! Hie wird eifach nüt meh glade
-                echo "<div id=\"noresults-label\">";
-                echo "<p>Huch, sieht aus als hättest du noch keine Filme eingetragen.</p>";
-                echo "</div>";
             }
+            echo "</table>";
+
+            echo "<div id=\"noresults-label\">";
+            echo "<p>Huch, sieht aus als hättest du noch keine Filme eingetragen.</p>";
+            echo "</div>";
 
 
             // SQL-Verbidung beenden

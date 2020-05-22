@@ -86,3 +86,7 @@ p{
 select{
     margin-bottom:2%;
 }
+
+.red{
+    color:rgb(235, 123, 123);
+}
