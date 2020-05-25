@@ -75,10 +75,12 @@
                     $filmsseen = sqlQuery($sql1,$_SESSION["userName"]);
                     $avgrating = round(sqlQuery($sql2,$_SESSION["userName"]),1);
 
+                    
                     echo "<h1>".$filmsseen."</h1>";
-
                     echo "<h4>Durchschnittliche Bewertung:</h4>";
                     echo "<h1>".$avgrating."</h1>";
+                    
+                    
                 
                 ?>
             </div>

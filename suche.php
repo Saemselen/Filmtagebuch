@@ -29,6 +29,7 @@
                 echo "<input id=\"i-search\" name=\"search-title\" type=\"text\" placeholder=\"Filmtitel, Genre, Datum oder Bewertung suchen\">";
                 echo "<button id=\"i-button\"name=\"search-submit\" type=\"submit\">Suchen</button>";
                 echo "</form>";
+
                 echo "</div>";
 
                 if(isset($_POST["search-submit"])){
