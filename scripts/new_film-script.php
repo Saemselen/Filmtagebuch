@@ -37,7 +37,7 @@ if(isset($_POST['new_film-submit'])){
             exit();
         }
         else{
-            mysqli_stmt_bind_param($stmt, "sssss", $filmtitle, $genre, $seen, $rating, $user);
+            mysqli_stmt_bind_param($stmt,"sssss", $filmtitle, $genre, $seen, $rating, $user);
             mysqli_stmt_execute($stmt);
 
             header("Location: ../index.php?addfilm=success");

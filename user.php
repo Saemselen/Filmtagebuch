@@ -3,10 +3,10 @@
     * Projekt Filmtagebuch
     * Samis Moser
     * Path: './user.php'
-    * Beschreibung: Benutzerprofil-Seite (Zum Abmelden)
+    * Beschreibung: Benutzerprofil-Seite 
 -->
 <?php
-    // Errors ausschalten, da hier normalerweise ein Error wegen doppelter Session initialisierung kommt
+    // Errors ausschalten, da hier normalerweise ein Error wegen doppelter Session initialisierung kommt, jedoch wird diese Initialisierung aufgrund des Benutuzernamens ($_SESSION['userName']) im <title> Tag gebraucht
     error_reporting(0);
     ini_set('display_errors', 0);
 ?>
