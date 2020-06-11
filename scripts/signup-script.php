@@ -92,6 +92,8 @@ if(isset($_POST['signup-submit'])){
                     // Statement ausführen
                     mysqli_stmt_execute($stmt);
 
+
+                    // nach erfolgreichem Signup zu login-seite weiterleiten
                     header("Location: ../login.php?signup=success");
                 }
 
