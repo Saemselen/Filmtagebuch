@@ -9,4 +9,4 @@ Im Rahmen des Moduls 151 erstelle ich mit HTML, CSS, JS, PHP und MySQL eine Weba
 * Alle Frontend-JS-Scripts befinden sich im Ordner **./JS**
 
 # Datenbank
-Das Script zur Erstellung der Datenbank mit Benutzer und Beispieldaten befindet sich im ./sql Ordner
+Das Script zur Erstellung der Datenbank mit Benutzer und Beispieldaten befindet sich im **./sql** Ordner
