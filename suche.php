@@ -50,8 +50,9 @@
                         require("./scripts/db-script.php");
 
                         $searchstring = "%".$_POST["search-title"]."%";
-                        
-                        $sql = "SELECT fid,title,genre,seen,rating FROM films WHERE title LIKE ? OR genre like ? OR seen like ? OR rating LIKE ?";
+                        $username = $_SESSION["userName"];
+                        $sql = "SELECT fid,title,genre,seen,rating,user FROM films WHERE title LIKE ? OR genre LIKE ? OR seen LIKE ? OR rating LIKE ?";
+                        $sqltest = "SELECT fid,user,title,genre,seen,rating FROM films WHERE user LIKE " . $_SESSION["userName"] . " AND " . "title LIKE ? OR genre like ? OR seen like ? OR rating LIKE ?";
                         $stmt = mysqli_stmt_init($connection);
 
                         if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -65,13 +66,16 @@
                             $res = mysqli_stmt_get_result($stmt);
                             
                             while($row = mysqli_fetch_assoc($res)){
-                                echo "<tr>";
-                                echo "<td>".$row["title"]."</td>";
-                                echo "<td>".$row["genre"]."</td>";
-                                echo "<td>".$row["seen"]."</td>";
-                                echo "<td>".$row["rating"]."</td>";
-                                echo "<td display=\"none\" class=\"entry\"></td>";
-                                echo "</tr>";   
+                                if($row["user"] == $username) {
+                                    echo "<tr>";
+                                    echo "<td>".$row["title"]."</td>";
+                                    echo "<td>".$row["genre"]."</td>";
+                                    echo "<td>".$row["seen"]."</td>";
+                                    echo "<td>".$row["rating"]."</td>";
+                                    echo "<td class=\"usertd\">".$row["user"]."</td>";
+                                    echo "<td display=\"none\" class=\"entry\"></td>";
+                                    echo "</tr>";
+                                }   
                             }
                         }
                         echo "</table>";
