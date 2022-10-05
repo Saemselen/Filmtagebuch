@@ -12,11 +12,11 @@ Im Rahmen des Moduls 151 erstelle ich mit HTML, CSS, JS, PHP und MySQL eine Weba
 Das Script zur Erstellung der Datenbank mit Benutzer und Beispieldaten befindet sich im **./sql** Ordner
 
 # Screenshots
-### Dashboard
+### 📸 Dashboard
 ![Dashboard](https://i.ibb.co/6FcpHBj/filmtagebuch-dashboard.png)
-### Login
+### 📸 Login
 ![Login](https://i.ibb.co/G0Vn3W6/filmtagebuch-login.png)
-### Suche
+### 📸 Suche
 ![Suche](https://i.ibb.co/PWSR8Vw/filmtagebuch-suche.png)
-### Benutzer-Seite
+### 📸 Benutzer-Seite
 ![Benutzer](https://i.ibb.co/8bSq740/filmtagebuch-user.png)
