@@ -1,4 +1,4 @@
-# Filmtagebuch by Samis Moser
+# Filmtagebuch 
 
 Im Rahmen des Moduls 151 erstelle ich mit HTML, CSS, JS, PHP und MySQL eine Webapplikation, bei der man Filme die man gesehen hat mit Datum eintragen kann. Ausserdem kann man sich die bereits eingetragenen Filme anzeigen lassen, kann diese sortieren und kann nach Filmen suchen.
 
